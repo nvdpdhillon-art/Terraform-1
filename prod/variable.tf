@@ -1,0 +1,2 @@
+variable "vrgs" {}
+variable "vprefix" {}

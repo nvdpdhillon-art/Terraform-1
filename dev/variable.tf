@@ -1,3 +1,5 @@
+variable "vrgs" {}
+variable "vprefix" {}
 variable "vvnet" {
  type = map(object({
     name = string
@@ -8,4 +10,3 @@ variable "vvnet" {
     tags                = map(string) 
  }))  
 }
-variable "vprefix" {}
