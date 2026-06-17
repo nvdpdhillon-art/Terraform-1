@@ -1,0 +1,2 @@
+variable "vprefix" {}
+variable "vnsg" {}
