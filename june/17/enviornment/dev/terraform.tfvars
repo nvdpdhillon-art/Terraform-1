@@ -35,8 +35,8 @@
 
             security_rule = {
             rule1 = {
-            name                       = "test123"
-            priority                   = 100
+            name                       = "rule1"
+            priority                   = 101
             direction                  = "Inbound"
             access                     = "Allow"
             protocol                   = "Tcp"
@@ -46,7 +46,7 @@
             destination_address_prefix = "*"
         }
          rule2 = {
-            name                       = "test123"
+            name                       = "rule2"
             priority                   = 100
             direction                  = "Inbound"
             access                     = "Allow"
@@ -59,3 +59,11 @@
         }
         }
     }
+
+    
+vnsgass = {
+  subnetnsg1 = {
+    subnet_id                 = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/virtualNetworks/dev-vnetril/subnets/dev-frontend"
+    network_security_group_id = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/networkSecurityGroups/dev-nsg1"
+  }
+}

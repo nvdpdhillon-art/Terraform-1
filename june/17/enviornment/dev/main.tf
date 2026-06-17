@@ -17,7 +17,14 @@ module "msubnet" {
   vprefix    = var.vprefix
 }
 module "mnsg" {
+  depends_on = [module.msubnet]
   source     = "../../modules/nsg"
   vprefix    = var.vprefix
   vnsg       = var.vnsg
+}
+module "mnsgass" {
+  depends_on = [module.msubnet, module.mnsg]
+  source = "../../modules/azure_subnet_network_security_group_association"
+  vprefix = var.vprefix
+  vnsgass = var.vnsgass
 }

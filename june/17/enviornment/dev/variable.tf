@@ -3,3 +3,4 @@ variable "vrgs" {}
 variable "vvnet" {}
 variable "vsubnet" {}
 variable "vnsg" {}
+variable "vnsgass" {}
