@@ -21,7 +21,7 @@
             address_prefixes        = ["10.0.1.0/24"] 
         }
         vsubnet2 = {
-            name                    = "azurebastionsubnet"
+            name                    = "AzureBastionSubnet"
             resource_group_name     = "dev-vnet_rg1"
             virtual_network_name    = "dev-vnetril"
             address_prefixes        = ["10.0.2.0/24"] 
@@ -67,3 +67,32 @@ vnsgass = {
     network_security_group_id = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/networkSecurityGroups/dev-nsg1"
   }
 }
+
+vpublicip = {
+    publicip1 = {
+        name                = "publicip1"
+        location            = "japanwest"
+        resource_group_name = "dev-vnet_rg1"
+        allocation_method   = "Static"
+        sku                 = "Standard"
+        }
+}
+vbastion = {
+    bastion1 = {
+        
+                name                = "bastion1"
+                location            = "japanwest"
+                resource_group_name = "dev-vnet_rg1"
+
+                ip_configuration     = {
+                    name                 = "configuration1"
+                    subnet_id            = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/virtualNetworks/dev-vnetril/subnets/AzureBastionSubnet"
+                    public_ip_address_id = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/publicIPAddresses/dev-publicip1"
+            }
+
+        }
+}
+
+
+
+# WIndowsVM

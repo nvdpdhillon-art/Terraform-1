@@ -1,0 +1,2 @@
+variable "vpublicip" {}
+variable "vprefix" {}
