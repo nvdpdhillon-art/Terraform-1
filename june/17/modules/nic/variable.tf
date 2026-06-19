@@ -1,0 +1,2 @@
+variable "vnic" {}
+variable "vprefix" {}

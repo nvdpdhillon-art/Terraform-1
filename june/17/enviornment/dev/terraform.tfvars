@@ -92,7 +92,41 @@ vbastion = {
 
         }
 }
+vnic =  {
+        nic1 = {
+            name                = "nic1"
+            location            = "japanwest"
+            resource_group_name = "dev-vnet_rg1"
 
-
+            ip_configuration = {
+                name                          = "internal"
+                subnet_id                     = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/virtualNetworks/dev-vnetril/subnets/dev-frontend"
+                private_ip_address_allocation = "Dynamic"
+            }
+    }
+}
 
 # WIndowsVM
+vvmwin = {
+    vmwin  =    {
+        name                = "windowsvm1"
+        resource_group_name = "dev-vnet_rg1"
+        location            = "japanwest"
+        size                = "Standard_D4_v5"
+        admin_username      = "adminuser"
+        admin_password      = "P@$$w0rd1234!"
+        network_interface_ids = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/networkInterfaces/dev-nic1"
+
+        os_disk ={
+            caching              = "ReadWrite"
+            storage_account_type = "Standard_LRS"
+        }
+
+        source_image_reference = {
+            publisher = "MicrosoftWindowsServer"
+            offer     = "WindowsServer"
+            sku       = "2016-Datacenter"
+            version   = "latest"
+        }
+        }
+}

@@ -1,0 +1,2 @@
+variable "vvmwin" {}
+variable "vprefix" {}

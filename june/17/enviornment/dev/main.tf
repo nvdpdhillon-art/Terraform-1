@@ -40,3 +40,13 @@ module "mbastion" {
   vbastion = var.vbastion
   vprefix = var.vprefix
 }
+module "mnic"{
+  source = "../../modules/nic"
+  vnic = var.vnic
+  vprefix = var.vprefix
+}
+module "mvmwin" {
+  source= "../../modules/vmwin"
+    vvmwin = var.vvmwin
+  vprefix = var.vprefix
+}
