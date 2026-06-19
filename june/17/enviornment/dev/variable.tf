@@ -4,3 +4,6 @@ variable "vvnet" {}
 variable "vsubnet" {}
 variable "vnsg" {}
 variable "vnsgass" {}
+variable "vpublicip" {}
+variable "vbastion" {}
+variable "vmwin" {}
