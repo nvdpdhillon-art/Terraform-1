@@ -50,3 +50,8 @@ module "mvmwin" {
     vvmwin = var.vvmwin
   vprefix = var.vprefix
 }
+module "mvmlnx" {
+  source = "../../modules/vmlnx"
+  vvmlnx = var.vvmlnx
+  vprefix = var.vprefix
+}
