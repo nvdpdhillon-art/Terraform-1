@@ -1,4 +1,4 @@
-resource "azurerm_linux_virtual_machine" "example" {
+resource "azurerm_linux_virtual_machine" "vmlnn" {
     for_each = var.vvmlnx
   name                = "${var.vprefix}-${each.value.name}"
   resource_group_name = each.value.resource_group_name
@@ -6,6 +6,7 @@ resource "azurerm_linux_virtual_machine" "example" {
   size                = each.value.size
   admin_username      = each.value.admin_username
   admin_password      = each.value.admin_password
+  disable_password_authentication = each.value.disable_password_authentication
   network_interface_ids = [each.value.network_interface_ids]
 
  # admin_ssh_key {

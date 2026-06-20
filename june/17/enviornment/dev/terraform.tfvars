@@ -1,4 +1,5 @@
     vprefix = "dev"
+    # Resource Group
     vrgs = {
         rg1 = {
             name = "vnet_rg1"
@@ -63,7 +64,7 @@
     
 vnsgass = {
   subnetnsg1 = {
-    subnet_id                 = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/virtualNetworks/dev-vnetril/subnets/dev-frontend"
+    subnet_id                 = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/virtualNetworks/dev-vnetril/subnets/frontend"
     network_security_group_id = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/networkSecurityGroups/dev-nsg1"
   }
 }
@@ -100,10 +101,21 @@ vnic =  {
 
             ip_configuration = {
                 name                          = "internal"
-                subnet_id                     = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/virtualNetworks/dev-vnetril/subnets/dev-frontend"
+                subnet_id                     = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/virtualNetworks/dev-vnetril/subnets/frontend"
                 private_ip_address_allocation = "Dynamic"
             }
     }
+        nic2 = {
+            name                = "nic2"
+            location            = "japanwest"
+            resource_group_name = "dev-vnet_rg1"
+
+            ip_configuration = {
+                name                          = "internal"
+                subnet_id                     = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/virtualNetworks/dev-vnetril/subnets/frontend"
+                private_ip_address_allocation = "Dynamic"
+            }
+    }    
 }
 
 # WIndowsVM
@@ -112,10 +124,10 @@ vvmwin = {
         name                = "windowsvm1"
         resource_group_name = "dev-vnet_rg1"
         location            = "japanwest"
-        size                = "Standard_D4_v5"
+        size                = "Standard_D2_v5"
         admin_username      = "adminuser"
         admin_password      = "P@$$w0rd1234!"
-        network_interface_ids = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/networkInterfaces/dev-nic1"
+        network_interface_ids = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/networkInterfaces/nic1"
 
         os_disk ={
             caching              = "ReadWrite"
@@ -137,10 +149,11 @@ vvmlnx = {
         name                = "linuxvm1"
         resource_group_name = "dev-vnet_rg1"
         location            = "japanwest"
-        size                = "Standard_D4_v5"
+        size                = "Standard_D2_v5"
         admin_username      = "adminuser"
         admin_password      = "P@$$w0rd1234!"
-        network_interface_ids = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/networkInterfaces/dev-nic1"
+        disable_password_authentication = false
+        network_interface_ids = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/networkInterfaces/nic2"
 
 
   #      admin_ssh_key = {
