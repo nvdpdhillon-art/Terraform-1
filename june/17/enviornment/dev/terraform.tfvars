@@ -140,6 +140,7 @@ vvmlnx = {
         size                = "Standard_D4_v5"
         admin_username      = "adminuser"
         admin_password      = "P@$$w0rd1234!"
+        disable_password_authentication = false
         network_interface_ids = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/networkInterfaces/dev-nic1"
 
 

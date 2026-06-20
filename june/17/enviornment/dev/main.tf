@@ -35,22 +35,25 @@ module "mpublicip" {
   vprefix = var.vprefix
 }
 module "mbastion" {
-  depends_on = [module.mpublicip]
+  depends_on = [module.mpublicip,module.msubnet]
   source = "../../modules/bastion"
   vbastion = var.vbastion
   vprefix = var.vprefix
 }
 module "mnic"{
+  depends_on = [module.msubnet, module.mnsg]
   source = "../../modules/nic"
   vnic = var.vnic
   vprefix = var.vprefix
 }
 module "mvmwin" {
+    depends_on = [module.mnic]
   source= "../../modules/vmwin"
     vvmwin = var.vvmwin
   vprefix = var.vprefix
 }
 module "mvmlnx" {
+  depends_on = [module.mnic]
   source = "../../modules/vmlnx"
   vvmlnx = var.vvmlnx
   vprefix = var.vprefix
