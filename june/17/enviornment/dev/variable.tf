@@ -8,3 +8,4 @@ variable "vpublicip" {}
 variable "vbastion" {}
 variable "vvmwin" {}
 variable "vnic" {}
+variable "vvmlnx" {}

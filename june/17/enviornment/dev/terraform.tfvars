@@ -130,3 +130,34 @@ vvmwin = {
         }
         }
 }
+
+#VM Linux 
+vvmlnx = {
+    vmlnx1 = {
+        name                = "linuxvm1"
+        resource_group_name = "dev-vnet_rg1"
+        location            = "japanwest"
+        size                = "Standard_D4_v5"
+        admin_username      = "adminuser"
+        admin_password      = "P@$$w0rd1234!"
+        network_interface_ids = "/subscriptions/65879a1d-8a71-47e6-af69-9f811ecad89e/resourceGroups/dev-vnet_rg1/providers/Microsoft.Network/networkInterfaces/dev-nic1"
+
+
+  #      admin_ssh_key = {
+   #         username   = "adminuser"
+   #         public_key = file("~/.ssh/id_rsa.pub")
+   #     }
+
+        os_disk = {
+            caching              = "ReadWrite"
+            storage_account_type = "Standard_LRS"
+        }
+
+        source_image_reference = {
+            publisher = "Canonical"
+            offer     = "0001-com-ubuntu-server-jammy"
+            sku       = "22_04-lts"
+            version   = "latest"
+        }
+    }
+}
