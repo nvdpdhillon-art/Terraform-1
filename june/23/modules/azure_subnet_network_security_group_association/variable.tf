@@ -1,0 +1,2 @@
+variable "vnsgass" {}
+variable "vprefix" {}
