@@ -1,2 +1,0 @@
-variable "vvmwin" {}
-variable "vprefix" {}

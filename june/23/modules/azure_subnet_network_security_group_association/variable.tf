@@ -1,2 +1,0 @@
-variable "vnsgass" {}
-variable "vprefix" {}

@@ -2,10 +2,10 @@ variable "vprefix" {}
 variable "vrgs" {}
 variable "vvnet" {}
 variable "vsubnet" {}
-variable "vnsg" {}
-variable "vnsgass" {}
+#variable "vnsg" {}
+#variable "vnsgass" {}
 #variable "vpublicip" {}
 #variable "vbastion" {}
-variable "vvmwin" {}
+#variable "vvmwin" {}
 variable "vnic" {}
 #variable "vvmlnx" {}
