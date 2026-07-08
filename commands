@@ -1,0 +1,15 @@
+# declaring variables in tf
+variable "resource_config" {
+  type = object({
+    rg_name  = string
+    location = string
+    tags     = map(string)
+    sku_id   = number
+    features = list(string)
+  })
+}
+
+# declaring variables in the CLI
+export TF_VAR_vrgs='{"nav1":"japaneast","nav2":"japanwest"}'
+terrafrom plan
+
