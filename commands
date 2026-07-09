@@ -13,3 +13,8 @@ variable "resource_config" {
 export TF_VAR_vrgs='{"nav1":"japaneast","nav2":"japanwest"}'
 terrafrom plan
 
+#Update the Configuration CodeLocate your terraform.tf or providers.tf file. 
+#Change the version constraint within the required_providers block using one of the following operators:
+(>=)  : Greater than or equal to    - Automatically pulls the newest available release. 
+(~>)  : Pessimistic constraint      - Safely updates patch releases without pulling a new major or minor version.
+(=)   :  Exact match                - Explicitly forces a specific higher version. 
